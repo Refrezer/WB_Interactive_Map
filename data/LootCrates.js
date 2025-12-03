@@ -21,6 +21,7 @@ const LootCratesModule = {
         { name: "Radite Crate", coords: [1078, 2067], type: "Radite", description: "Radite inside" },
         { name: "Radite Crate", coords: [1279, 3273], type: "Radite", description: "Radite inside" },
         { name: "Radite Crate", coords: [994, 3393], type: "Radite", description: "Radite inside" },
+        { name: "Radite Crate", coords: [889, 1437], type: "Radite", description: "Radite inside" },
     ],
 
     createLayer: function(allIcons) {
