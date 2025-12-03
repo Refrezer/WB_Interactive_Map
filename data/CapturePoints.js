@@ -6,7 +6,7 @@ const CapturePointsModule = {
     icons: {
         Waste_coins: L.icon({ iconUrl: 'icons/Points/Wastecoins.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Manpower: L.icon({ iconUrl: 'icons/Points/Manpower.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
-        Electricity : L.icon({ iconUrl: 'icons/Points/Dam.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
+        Electricity : L.icon({ iconUrl: 'icons/Points/dam.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         HeavySteel : L.icon({ iconUrl: 'icons/Points/HeavySteel.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Oil: L.icon({ iconUrl: 'icons/Points/Oil.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Circuitry: L.icon({ iconUrl: 'icons/Points/Circuitry.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
