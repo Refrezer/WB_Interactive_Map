@@ -8,7 +8,6 @@ const MODULES = [
     typeof PneumamailModule !== 'undefined' ? PneumamailModule : null,
     typeof ResourceModule !== 'undefined' ? ResourceModule : null,
     typeof LootCratesModule !== 'undefined' ? LootCratesModule : null,
-    // Проверка на два варианта написания (LocationsModule или LocationModule)
     typeof LocationsModule !== 'undefined' ? LocationsModule : (typeof LocationModule !== 'undefined' ? LocationModule : null)
 ];
 
@@ -54,8 +53,6 @@ ACTIVE_MODULES.forEach(module => {
 
         // --- ИСПРАВЛЕНИЕ ТЕКСТА (СЛОВАРЬ ЗАМЕН) ---
         let labelText = typeKey;
-
-        // Словарь специальных названий
         const SPECIAL_NAMES = {
             "USPA": "USPA",
             "CFR": "CFR",
@@ -71,8 +68,8 @@ ACTIVE_MODULES.forEach(module => {
             labelText = SPECIAL_NAMES[typeKey];
         } else {
             labelText = typeKey
-                .replace(/([A-Z])/g, ' $1') // Пробелы перед заглавными
-                .replace(/_/g, ' ')         // Убираем нижнее подчеркивание
+                .replace(/([A-Z])/g, ' $1')
+                .replace(/_/g, ' ')
                 .trim();
         }
 
@@ -107,14 +104,8 @@ function initSidebar() {
 
     // --- ЛОГИКА СОРТИРОВКИ ---
     const ORDER_LIST = [
-        "Major faction",
-        "Secondary faction",
-        "Points",
-        "Locations",
-        "Loot",
-        "Merchants",
-        "Crafting benches",
-        "Pneumamail",
+        "Major faction", "Secondary faction", "Points", "Locations",
+        "Loot", "Merchants", "Crafting benches", "Pneumamail",
     ];
 
     function getSortIndex(groupName) {
@@ -147,7 +138,6 @@ function initSidebar() {
         const gridContainer = document.createElement('div');
         gridContainer.className = 'items-grid';
 
-        // Массив для хранения всех инпутов этой группы (для функции "выбрать все")
         const groupInputs = [];
 
         groups[groupName].forEach(item => {
@@ -158,7 +148,6 @@ function initSidebar() {
             input.type = 'checkbox';
             input.checked = true;
 
-            // Сохраняем ссылку на инпут и слой
             groupInputs.push({ input: input, layer: item.layer });
 
             input.addEventListener('change', () => {
@@ -182,12 +171,9 @@ function initSidebar() {
 
         content.appendChild(gridContainer);
 
-        // --- ЛОГИКА КЛИКА ПО ЗАГОЛОВКУ ГРУППЫ (ВКЛ/ВЫКЛ ВСЕ) ---
+        // ЛОГИКА КЛИКА ПО ЗАГОЛОВКУ ГРУППЫ (ВКЛ/ВЫКЛ ВСЕ)
         groupHeader.addEventListener('click', () => {
-            // Проверяем: все ли сейчас включены?
             const allChecked = groupInputs.every(obj => obj.input.checked);
-
-            // Если все включены -> выключаем все. Иначе -> включаем все.
             const targetState = !allChecked;
 
             groupInputs.forEach(obj => {
@@ -201,14 +187,52 @@ function initSidebar() {
         });
     });
 
-    // FOOTER (ИЗМЕНЕН ТЕКСТ)
+    // FOOTER
     const footer = document.createElement('div');
     footer.className = 'sidebar-footer';
     footer.innerHTML = '<p>Made by Refrezer(Ran_joi)</p>';
     sidebar.appendChild(footer);
 }
 
+// --- 5. МОБИЛЬНАЯ ОПТИМИЗАЦИЯ (Скрытие/Показ меню) ---
+function initMobileToggle() {
+    const mapContainer = document.querySelector('.map-container');
+    const sidebar = document.getElementById('sidebar');
+
+    if (!mapContainer || !sidebar) return;
+
+    // 1. Вставляем кнопку
+    const toggleButton = document.createElement('div');
+    toggleButton.className = 'menu-toggle-button';
+    toggleButton.innerHTML = 'FILTERS';
+
+    // Вставляем кнопку на карту
+    mapContainer.appendChild(toggleButton);
+
+    // 2. Логика переключения
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('menu-open');
+
+        // Меняем текст кнопки для UX
+        if (sidebar.classList.contains('menu-open')) {
+            toggleButton.innerText = 'СКРЫТЬ';
+        } else {
+            toggleButton.innerText = 'FILTERS';
+        }
+    });
+
+    // 3. Закрытие меню при клике на карту (вне меню), если оно открыто
+    map.on('click', function() {
+        if (sidebar.classList.contains('menu-open')) {
+            sidebar.classList.remove('menu-open');
+            toggleButton.innerText = 'FILTERS';
+        }
+    });
+}
+
+// Запуск инициализации
 initSidebar();
+initMobileToggle();
 
 map.on('click', function(e) {
     console.log(`[${Math.round(e.latlng.lat)}, ${Math.round(e.latlng.lng)}]`);

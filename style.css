@@ -7,7 +7,6 @@ body, html {
     overflow: hidden;
     background-color: #050505;
 
-    /* Шрифт Fallout */
     font-family: 'Share Tech Mono', monospace;
     color: #e0e0e0;
 }
@@ -20,11 +19,10 @@ body, html {
 
 /* --- 2. ЛЕВАЯ ПАНЕЛЬ (SIDEBAR) --- */
 .sidebar {
-    width: 450px;            /* Ширина 450px */
+    width: 450px;            /* Ширина для DESKTOP */
     height: 100%;
     flex-shrink: 0;
 
-    /* ТЕМНО-ТЕМНО СЕРЫЙ ФОН */
     background-color: #161616;
 
     border-right: 2px solid #4CAF50;
@@ -32,7 +30,78 @@ body, html {
     flex-direction: column;
     box-shadow: 5px 0 20px rgba(0, 0, 0, 0.9);
     z-index: 1000;
+
+    /* Элементы, необходимые для мобильной анимации (даже на десктопе) */
+    position: relative; /* По умолчанию */
+    transition: transform 0.3s ease-in-out; /* Плавное скольжение */
 }
+
+/* --- СТИЛИ ДЛЯ КНОПКИ ПЕРЕКЛЮЧЕНИЯ (Mobile Toggle) --- */
+.menu-toggle-button {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    display: none; /* Скрываем на больших экранах по умолчанию */
+
+    /* Визуальный стиль */
+    cursor: pointer;
+    background-color: #161616;
+    color: #4CAF50;
+    padding: 8px 12px;
+    border: 2px solid #4CAF50;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+    user-select: none;
+}
+
+
+/* ======================================================= */
+/* --- АДАПТИВНОСТЬ: ДЛЯ ТЕЛЕФОНОВ И УЗКИХ ЭКРАНОВ --- */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+
+    /* 1. Показываем кнопку-переключатель */
+    .menu-toggle-button {
+        display: block;
+    }
+
+    /* 2. Скрываем сайдбар и делаем его на весь экран */
+    .sidebar {
+        width: 90vw; /* Занимает 90% ширины экрана телефона */
+        height: 100vh;
+
+        /* Фиксируем поверх карты */
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        /* Сдвигаем влево, чтобы скрыть */
+        transform: translateX(-100%);
+        box-shadow: none; /* Убираем тень при скрытии */
+    }
+
+    /* 3. Класс для показа меню */
+    .sidebar.menu-open {
+        transform: translateX(0); /* Выдвигаем в видимую область */
+        box-shadow: 5px 0 20px rgba(0, 0, 0, 0.9);
+    }
+
+    /* 4. Карта занимает всю ширину */
+    .app-wrapper {
+        flex-direction: column; /* Элементы идут друг под другом, но sidebar position: fixed отменяет это */
+    }
+
+    .map-container {
+        width: 100vw;
+        flex-grow: 1;
+    }
+}
+
+/* --- ПРОЧИЕ СТИЛИ (Оставлены для полноты) --- */
 
 /* --- ЗАГОЛОВОК --- */
 .sidebar-header {
@@ -82,24 +151,14 @@ body, html {
     margin-bottom: 12px;
     border-bottom: 1px dashed #444;
     padding-bottom: 4px;
-
-    /* Интерактивность для клика */
     cursor: pointer;
     user-select: none;
     transition: all 0.2s;
 }
 
-/* Эффекты при наведении на заголовок (для функции клика) */
-.group-header:hover {
-    border-bottom-color: #4CAF50;
-}
-.group-header:hover h2 {
-    color: #4CAF50;
-    text-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-}
-.group-header:active {
-    transform: scale(0.99);
-}
+.group-header:hover { border-bottom-color: #4CAF50; }
+.group-header:hover h2 { color: #4CAF50; text-shadow: 0 0 5px rgba(76, 175, 80, 0.5); }
+.group-header:active { transform: scale(0.99); }
 
 .group-header h2 {
     font-size: 17px;
@@ -107,10 +166,9 @@ body, html {
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
-    pointer-events: none; /* Клик проходит сквозь текст на блок */
+    pointer-events: none;
 }
 
-/* Сетка */
 .items-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -165,7 +223,7 @@ body, html {
     color: #666;
 }
 
-/* --- КАРТА --- */
+/* --- ПРАВАЯ ЧАСТЬ (КАРТА) --- */
 .map-container {
     flex-grow: 1;
     position: relative;
