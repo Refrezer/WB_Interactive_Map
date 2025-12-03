@@ -215,7 +215,7 @@ function initMobileToggle() {
 
         // Меняем текст кнопки для UX
         if (sidebar.classList.contains('menu-open')) {
-            toggleButton.innerText = 'СКРЫТЬ';
+            toggleButton.innerText = 'HIDE';
         } else {
             toggleButton.innerText = 'FILTERS';
         }
