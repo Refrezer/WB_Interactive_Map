@@ -58,9 +58,9 @@ ACTIVE_MODULES.forEach(module => {
             "CFR": "CFR",
             "NP": "NP",
             "RRA": "RRA",
-            "ARC": "ARC-Tech",
-            "Arc": "ARC-Tech",
-            "ArcTech": "ARC-Tech",
+            "ARC": "Ark-Tek",
+            "Arc": "Ark-Tek",
+            "ArcTech": "Ark-Tek",
             "Manpower": "Manpower"
         };
 

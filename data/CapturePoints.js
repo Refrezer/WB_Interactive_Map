@@ -4,7 +4,7 @@ const CapturePointsModule = {
 
     // 2. ОПРЕДЕЛЕНИЯ ИКОНОК
     icons: {
-        Waste_coins: L.icon({ iconUrl: 'icons/Points/Wastecoins.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
+        West_Coast_Dollars: L.icon({ iconUrl: 'icons/Points/Wastecoins.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Manpower: L.icon({ iconUrl: 'icons/Points/Manpower.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Electricity : L.icon({ iconUrl: 'icons/Points/dam.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         HeavySteel : L.icon({ iconUrl: 'icons/Points/HeavySteel.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
@@ -21,11 +21,11 @@ const CapturePointsModule = {
         { name: "Scavengers Keep", coords: [2567, 3107], type: "Manpower", description: "Gain Manpower" },
         { name: "FROG-2 Topside", coords: [2216, 3513], type: "Manpower", description: "Gain Manpower" },
         { name: "ARPR Radio Station", coords: [1800, 1524], type: "Manpower", description: "Gain Manpower" },
-        { name: "Airport Capture Point", coords: [1303, 2967], type: "Waste_coins", description: "Gain Waste Coins" },
-        { name: "Gaxon Water Plant", coords: [2556, 715], type: "Waste_coins", description: "Gain Waste Coins" },
-        { name: "Phoenix General Hospital", coords: [3219, 2780], type: "Waste_coins", description: "Gain Waste Coins" },
-        { name: "Solance Tower", coords: [3377, 2644], type: "Waste_coins", description: "Gain Waste Coins" },
-        { name: "Ultra Value Mart", coords: [1846, 2623], type: "Waste_coins", description: "Gain Waste Coins" },
+        { name: "Airport Capture Point", coords: [1303, 2967], type: "West_Coast_Dollars", description: "Gain Waste Coins" },
+        { name: "Gaxon Water Plant", coords: [2556, 715], type: "West_Coast_Dollars", description: "Gain Waste Coins" },
+        { name: "Phoenix General Hospital", coords: [3219, 2780], type: "West_Coast_Dollars", description: "Gain Waste Coins" },
+        { name: "Solance Tower", coords: [3377, 2644], type: "West_Coast_Dollars", description: "Gain Waste Coins" },
+        { name: "Ultra Value Mart", coords: [1846, 2623], type: "West_Coast_Dollars", description: "Gain Waste Coins" },
         { name: "ARC-Fusion Gas Station", coords: [1505, 322], type: "Oil", description: "Gain Oil" },
         { name: "The Dam", coords: [1014, 265], type: "Electricity", description: "Producing Power" },
         { name: "Warehouse", coords: [1576, 1283], type: "HeavySteel", description: "Gain Heavy Steel" },

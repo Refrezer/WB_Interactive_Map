@@ -4,14 +4,14 @@ const PneumamailModule = {
 
     // 2. ОПРЕДЕЛЕНИЯ ИКОНОК
     icons: {
-        Mail_service: L.icon({ iconUrl: 'icons/Pneumamail/Mail.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
+        Mail_Service: L.icon({ iconUrl: 'icons/Pneumamail/Mail.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Drop_off_point: L.icon({ iconUrl: 'icons/Pneumamail/Recieve.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
     },
 
     // 3. МАССИВ ДАННЫХ
     data: [
-        { name: "Mail service", coords: [1924, 2072], type: "Mail_service", description: "Job - Mail service" },
-        { name: "Mail service", coords: [3174, 2064], type: "Mail_service", description: "Job - Mail service" },
+        { name: "Mail service", coords: [1924, 2072], type: "Mail_Service", description: "Job - Mail service" },
+        { name: "Mail service", coords: [3174, 2064], type: "Mail_Service", description: "Job - Mail service" },
         { name: "Drop-off point", coords: [1645, 3649], type: "Drop_off_point", description: "Package Drop-off point" },
         { name: "Drop-off point", coords: [872, 3205], type: "Drop_off_point", description: "Package Drop-off point" },
 
