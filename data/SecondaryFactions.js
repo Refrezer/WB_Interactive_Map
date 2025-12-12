@@ -8,6 +8,7 @@ const SecondaryFactionsModule = {
         The_Monarchs: L.icon({ iconUrl: 'icons/SecondaryFactions/Monarchs.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Arizona_Rangers: L.icon({ iconUrl: 'icons/SecondaryFactions/AR.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
         Ponderosa_watch: L.icon({ iconUrl: 'icons/SecondaryFactions/PW.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
+        Petrolheads: L.icon({ iconUrl: 'icons/SecondaryFactions/ph.png', iconSize: [50, 50], iconAnchor: [25, 50], }),
     },
 
     // 3. МАССИВ ДАННЫХ
@@ -16,6 +17,7 @@ const SecondaryFactionsModule = {
         { name: "The Monarchs", coords: [3037, 1906], type: "The_Monarchs", description: "The Monarchs Main Base." },
         { name: "Arizona Rangers", coords: [1668, 838], type: "Arizona_Rangers", description: "Arizona Rangers Main Base." },
         { name: "Ponderosa Watch", coords: [570, 1778], type: "Ponderosa_watch", description: "Ponderosa Watch Main Base." },
+        { name: "Petrolheads", coords: [1209, 1935], type: "Petrolheads", description: "Petrolheads Main Base." },
         ],
 
     createLayer: function(allIcons) {
