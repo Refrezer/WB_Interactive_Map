@@ -15,11 +15,11 @@ const MerchantsModule = {
     data: [
         { name: "Doctor", coords: [2907, 2039], type: "Doctors", description: "Sells medicines" },
         { name: "Doctor", coords: [2681, 2028], type: "Doctors", description: "Sells medicines" },
-        { name: "Doctor", coords: [546, 1824], type: "Doctors", description: "Sells medicines" },
+        { name: "Doctor", coords: [564, 1852], type: "Doctors", description: "Sells medicines" },
         { name: "Doctor", coords: [536, 1827], type: "Doctors", description: "Sells medicines" },
         { name: "Gunsmith", coords: [1982, 2081], type: "Gunsmith", description: "Sell firearm" },
         { name: "Gunsmith", coords: [2681, 2062], type: "Gunsmith", description: "Sell firearm" },
-        { name: "Gunsmith", coords: [523, 1782], type: "Gunsmith", description: "Sell firearm" },
+        { name: "Gunsmith", coords: [513, 1798], type: "Gunsmith", description: "Sell firearm" },
         { name: "Scrap Buyer", coords: [1976, 2076], type: "Scrap_Buyer", description: "Buying scrap" },
         { name: "Scrap Buyer", coords: [2940, 2068], type: "Scrap_Buyer", description: "Buying scrap" },
         { name: "Scrap Buyer", coords: [2660, 2010], type: "Scrap_Buyer", description: "Buying scrap" },

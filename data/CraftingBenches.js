@@ -18,7 +18,7 @@ const CraftingBenchesModule = {
         { name: "Crafting bench", coords: [645, 2066], type: "Crafting_Bench", description: "Crafting_bench" },
         { name: "Crafting bench", coords: [533, 1814], type: "Crafting_Bench", description: "Crafting_bench" },
         { name: "Crafting bench", coords: [1197, 1971], type: "Crafting_Bench", description: "Crafting_bench" },
-        { name: "Crafting bench", coords: [510, 1815], type: "Crafting_Bench", description: "Crafting_bench" },
+        { name: "Crafting bench", coords: [500, 1804], type: "Crafting_Bench", description: "Crafting_bench" },
         { name: "Crafting bench", coords: [575, 1805], type: "Crafting_Bench", description: "Crafting_bench" },
         { name: "Crafting bench", coords: [2640, 1656], type: "Crafting_Bench", description: "Crafting_bench" },
         ],

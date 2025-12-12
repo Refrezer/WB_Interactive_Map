@@ -13,9 +13,12 @@ const MajorFactionsModule = {
     // 3. МАССИВ ДАННЫХ
     data: [
         { name: "Cascadian Federal Rebuplic", coords: [2913, 612], type: "CFR", description: "CFR Main Base." },
+        { name: "Cascadian Federal Rebuplic", coords: [1626, 501], type: "CFR", description: "CFR Second Base." },
         { name: "U.S. Provisional Authority", coords: [900, 3010], type: "USPA", description: "USPA Main Base" },
+        { name: "U.S. Provisional Authority", coords: [902, 1471], type: "USPA", description: "USPA FOB Spartan Base" },
         { name: "New Phoenix", coords: [3097, 2093], type: "NP", description: "New Phoenix Main Base." },
-        { name: "Ark Technologies Inc.)", coords: [2323, 3087], type: "ARC", description: "Ark Technologies Inc. Main Base" }
+        { name: "Ark Technologies Inc.)", coords: [2323, 3087], type: "ARC", description: "Ark Technologies Inc. Main Base" },
+        { name: "Ark-City)", coords: [3235, 1103], type: "ARC", description: "Ark Technologies Inc. Second Base" }
         ],
 
     createLayer: function(allIcons) {

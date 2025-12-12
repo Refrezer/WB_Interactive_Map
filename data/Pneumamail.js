@@ -14,6 +14,7 @@ const PneumamailModule = {
         { name: "Mail service", coords: [3174, 2064], type: "Mail_Service", description: "Job - Mail service" },
         { name: "Drop-off point", coords: [1645, 3649], type: "Drop_off_Point", description: "Package Drop-off point" },
         { name: "Drop-off point", coords: [872, 3205], type: "Drop_off_Point", description: "Package Drop-off point" },
+        { name: "Drop-off point", coords: [1473, 354], type: "Drop_off_Point", description: "Package Drop-off point" },
 
         ],
 
